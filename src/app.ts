@@ -12,7 +12,7 @@ app.setErrorHandler((error, req, reply) => {
   if (error instanceof ZodError) {
     return reply.status(400).send({
       message: 'Validation error.',
-      issues: error.format()
+      issues: error.format(),
     })
   }
 
