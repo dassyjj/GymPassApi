@@ -17,7 +17,6 @@ describe('Refresh token (e2e)', () => {
       name: 'John Doe',
       email: 'JonhDoe@example.com',
       password: '1234567',
-
     })
 
     const authResponse = await request(app.server).post('/sessions').send({
@@ -37,7 +36,7 @@ describe('Refresh token (e2e)', () => {
     })
 
     expect(response.get('Set-Cookie')).toEqual([
-      expect.stringContaining('refreshToken=')
+      expect.stringContaining('refreshToken='),
     ])
   })
 })

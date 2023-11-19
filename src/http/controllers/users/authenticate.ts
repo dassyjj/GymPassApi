@@ -28,7 +28,8 @@ export async function authenticate(req: FastifyRequest, reply: FastifyReply) {
         sign: {
           sub: user.id,
         },
-      })
+      },
+    )
 
     const refreshToken = await reply.jwtSign(
       {
@@ -39,7 +40,8 @@ export async function authenticate(req: FastifyRequest, reply: FastifyReply) {
           sub: user.id,
           expiresIn: '7d',
         },
-      })
+      },
+    )
 
     return reply
       .setCookie('refreshToken', refreshToken, {
@@ -59,5 +61,4 @@ export async function authenticate(req: FastifyRequest, reply: FastifyReply) {
 
     throw err
   }
-
 }
