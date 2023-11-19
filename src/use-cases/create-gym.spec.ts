@@ -2,7 +2,6 @@ import { describe, it, expect, beforeEach } from 'vitest'
 
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
 import { CreateGymUseCase } from './create-gym'
-import { Decimal } from '@prisma/client/runtime/library'
 
 // sut - system under test
 
