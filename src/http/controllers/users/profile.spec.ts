@@ -1,6 +1,5 @@
 import request from 'supertest'
 import { app } from '@/app'
-
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { createAndAuthenticateUser } from '@/utils/test/create-and-authenticate-user'
 
@@ -22,8 +21,10 @@ describe('Profile (e2e)', () => {
       .send()
 
     expect(profileResponse.statusCode).toEqual(200)
-    expect(profileResponse.body.user).toEqual(expect.objectContaining({
-      email: 'JonhDoe@example.com',
-    }))
+    expect(profileResponse.body.user).toEqual(
+      expect.objectContaining({
+        email: 'johndoe@example.com',
+      }),
+    )
   })
 })
